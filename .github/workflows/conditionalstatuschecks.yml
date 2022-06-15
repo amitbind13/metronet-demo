@@ -25,7 +25,6 @@ jobs:
 
     steps:
     - name: Ensure All Conditional Checks Have Passed
-      uses: blend/require-conditional-status-checks@2022.02.04
       with:
         interval: 20s
         checks-yaml: |

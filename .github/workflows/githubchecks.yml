@@ -1,4 +1,4 @@
-name: "build-test"
+name: POC for "build-test"
 on: [push]
 
 jobs:

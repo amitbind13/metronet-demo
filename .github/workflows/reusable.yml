@@ -1,4 +1,4 @@
-name: Reusable workflow example
+name: POC for Reusable workflow example
 
 on:
   workflow_call:

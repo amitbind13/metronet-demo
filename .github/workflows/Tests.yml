@@ -28,18 +28,6 @@ on:
         required: false
 
 jobs:
-  automerge:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: reitermarkus/automerge@v2
-        with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
-
   run-tests:
     runs-on: ubuntu-latest
     steps:

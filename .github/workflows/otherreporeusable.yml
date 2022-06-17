@@ -1,0 +1,23 @@
+name: POC for other repo Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+
+jobs:
+  call-workflow-in-another-repo:
+    uses: octo-org/another-repo/.github/workflows/on_push.yml@v1
+  example_job:
+    name: Pass input and secrets to my-action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/workflows/my-action
+        with:
+          username: ${{ inputs.username }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
